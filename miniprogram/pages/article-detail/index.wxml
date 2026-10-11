@@ -1,0 +1,18 @@
+<view class="page detail-page" wx:if="{{article}}">
+  <view class="detail-hero detail-hero--{{article.theme}}">
+    <view class="tag">{{article.categoryName}}</view>
+    <view class="detail-hero__title">{{article.title}}</view>
+    <view class="detail-hero__meta">{{article.readTime}} · 日常科普</view>
+  </view>
+
+  <view class="article-body">
+    <view class="article-section" wx:for="{{article.sections}}" wx:key="heading">
+      <view class="article-section__heading">{{item.heading}}</view>
+      <view class="article-section__paragraph" wx:for="{{item.paragraphs}}" wx:for-item="paragraph" wx:key="*this">
+        {{paragraph}}
+      </view>
+    </view>
+  </view>
+
+  <view class="disclaimer detail-disclaimer">{{disclaimer}}</view>
+</view>

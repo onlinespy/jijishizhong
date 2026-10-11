@@ -1,0 +1,52 @@
+.summary-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+
+.summary-value {
+  color: #2f7257;
+  font-size: 48rpx;
+  font-weight: 600;
+}
+
+.day-card {
+  margin-bottom: 32rpx;
+}
+
+.day-head {
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.day-title {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.day-total {
+  color: #2f7257;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.water-row {
+  display: flex;
+  align-items: center;
+  min-height: 72rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.water-row:last-child {
+  border-bottom: 0;
+}
+
+.delete-water {
+  margin-left: 16rpx;
+  color: #999999;
+  font-size: 24rpx;
+}

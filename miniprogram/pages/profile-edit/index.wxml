@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="card">
+    <view class="form-item">
+      <view class="form-label">称呼</view>
+      <input class="input" maxlength="20" data-field="nickname" value="{{nickname}}" placeholder="用于页面显示，可留空" bindinput="onInput" />
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">性别</view>
+      <view class="chip-row">
+        <button
+          wx:for="{{genders}}"
+          wx:key="*this"
+          class="chip {{gender === item ? 'chip--active' : ''}}"
+          data-value="{{item}}"
+          bindtap="selectGender"
+        >
+          {{item}}
+        </button>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">生日</view>
+      <picker mode="date" value="{{birthday}}" end="2026-12-31" bindchange="onBirthdayChange">
+        <view class="picker {{birthday ? '' : 'placeholder'}}">{{birthday || '请选择生日'}}</view>
+      </picker>
+    </view>
+
+    <view class="two-column">
+      <view class="form-item">
+        <view class="form-label">身高（cm）</view>
+        <input class="input" type="digit" data-field="height" value="{{height}}" placeholder="例如 170" bindinput="onInput" />
+      </view>
+      <view class="form-item">
+        <view class="form-label">体重（kg）</view>
+        <input class="input" type="digit" data-field="weight" value="{{weight}}" placeholder="例如 60" bindinput="onInput" />
+      </view>
+    </view>
+
+    <view class="bmi-preview">
+      <view>
+        <view class="strong">BMI 数值</view>
+        <view class="tiny muted">仅根据身高与体重计算展示，不进行体型分类</view>
+      </view>
+      <view class="bmi-preview__value">{{bmi || '--'}}</view>
+    </view>
+  </view>
+
+  <view class="card setting-card">
+    <view class="row-between">
+      <view class="grow">
+        <view class="setting-title">隐藏经期模块</view>
+        <view class="tiny muted">开启后记录页不再显示经期入口，可随时关闭恢复。</view>
+      </view>
+      <switch color="#2F7257" checked="{{hidePeriod}}" bindchange="onHidePeriodChange" />
+    </view>
+  </view>
+
+  <view class="disclaimer">档案数据仅用于 BMI 数值计算、运动消耗估算及个人记录展示。本工具不提供医疗诊断。</view>
+
+  <button class="primary-button save-button" bindtap="save">保存档案</button>
+</view>

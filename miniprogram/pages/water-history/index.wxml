@@ -1,0 +1,33 @@
+<view class="page water-history-page">
+  <view class="summary-card card">
+    <view>
+      <view class="summary-value">{{groups.length}}</view>
+      <view class="tiny muted">记录天数</view>
+    </view>
+    <view>
+      <view class="summary-value">{{waterTarget}}</view>
+      <view class="tiny muted">每日目标 ml</view>
+    </view>
+  </view>
+
+  <view class="day-card card" wx:for="{{groups}}" wx:key="date">
+    <view class="row-between day-head">
+      <view class="day-title">{{item.label}}</view>
+      <view class="day-total">{{item.total}}ml</view>
+    </view>
+    <view class="water-row" wx:for="{{item.items}}" wx:for-item="record" wx:key="id">
+      <view class="grow">喝水 {{record.amount}}ml</view>
+      <view class="tiny muted">{{record.time}}</view>
+      <button
+        class="delete-water"
+        data-id="{{record.id}}"
+        data-amount="{{record.amount}}"
+        bindtap="deleteWater"
+      >
+        删除
+      </button>
+    </view>
+  </view>
+
+  <view class="card empty" wx:if="{{!groups.length}}">暂无喝水记录</view>
+</view>

@@ -1,0 +1,13 @@
+node_modules/
+miniprogram_npm/
+.idea/
+.vscode/
+.env
+.env.*
+coverage/
+dist/
+build/
+.DS_Store
+*.log
+*.dmp
+project.private.config.json

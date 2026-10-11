@@ -1,0 +1,87 @@
+<view class="page calendar-page">
+  <view class="calendar-card">
+    <view class="calendar-head">
+      <button class="month-button" bindtap="previousMonth">‹</button>
+      <view class="calendar-month">{{monthLabel}}</view>
+      <button class="month-button" bindtap="nextMonth">›</button>
+    </view>
+
+    <view class="week-row">
+      <view class="week-cell" wx:for="{{weekdays}}" wx:key="*this">{{item}}</view>
+    </view>
+
+    <view class="calendar-grid">
+      <button
+        wx:for="{{cells}}"
+        wx:key="key"
+        class="calendar-day {{item.blank ? 'calendar-day--blank' : ''}} {{item.today ? 'calendar-day--today' : ''}} {{item.selected ? 'calendar-day--selected' : ''}}"
+        data-date="{{item.date}}"
+        bindtap="selectDay"
+      >
+        <view wx:if="{{!item.blank}}" class="day-number">{{item.day}}</view>
+        <view class="marker-row" wx:if="{{!item.blank && item.markers.length}}">
+          <view
+            wx:for="{{item.markers}}"
+            wx:for-item="marker"
+            wx:key="*this"
+            class="marker marker--{{marker}}"
+          ></view>
+        </view>
+      </button>
+    </view>
+
+    <view class="legend-row">
+      <view class="legend-item" wx:for="{{legend}}" wx:key="type">
+        <view class="marker marker--{{item.type}}"></view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <view class="section-title">{{selectedLabel}}</view>
+    <view class="tag">{{selectedDetail.hasData ? '有记录' : '无记录'}}</view>
+  </view>
+
+  <view class="card detail-card" wx:if="{{selectedDetail.hasData}}">
+    <view class="calendar-detail-row" wx:if="{{selectedDetail.fasting}}">
+      <view class="detail-symbol detail-symbol--green">断</view>
+      <view class="grow">
+        <view class="strong">断食打卡完成</view>
+        <view class="tiny muted">{{selectedDetail.fasting.eatStart}} - {{selectedDetail.fasting.eatEnd}}</view>
+      </view>
+    </view>
+    <view class="calendar-detail-row" wx:if="{{selectedDetail.waterTotal}}">
+      <view class="detail-symbol detail-symbol--blue">水</view>
+      <view class="grow">
+        <view class="strong">喝水 {{selectedDetail.waterTotal}}ml</view>
+        <view class="tiny muted">当日累计记录</view>
+      </view>
+    </view>
+    <view class="calendar-detail-row" wx:if="{{selectedDetail.weight}}">
+      <view class="detail-symbol detail-symbol--gold">秤</view>
+      <view class="grow">
+        <view class="strong">体重 {{selectedDetail.weight.weight}}kg</view>
+        <view class="tiny muted">体重数值记录</view>
+      </view>
+    </view>
+    <view class="calendar-detail-row">
+      <view class="detail-symbol detail-symbol--plain">食</view>
+      <view class="grow">
+        <view class="strong">摄入 {{selectedDetail.dietCalories}} kcal</view>
+        <view class="tiny muted">运动消耗 {{selectedDetail.exerciseCalories}} kcal</view>
+      </view>
+    </view>
+    <view class="calendar-detail-row" wx:if="{{selectedDetail.period}}">
+      <view class="detail-symbol detail-symbol--rose">期</view>
+      <view class="grow">
+        <view class="strong">经期记录区间</view>
+        <view class="tiny muted">{{selectedDetail.period.start}} 至 {{selectedDetail.period.end}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card empty" wx:else>当天暂无打卡或健康记录</view>
+
+  <view class="disclaimer">日历用于回看用户自行录入的记录，不生成健康评分，也不对数据作医疗解释。</view>
+</view>

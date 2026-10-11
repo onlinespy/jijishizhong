@@ -1,0 +1,397 @@
+.records-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 24rpx;
+  color: #333333;
+  background: #ffffff;
+}
+
+.records-header__eyebrow {
+  color: #777777;
+  font-size: 24rpx;
+}
+
+.records-header__date {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.records-header__tip {
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  color: #2f7257;
+  background: #e6f1ed;
+  font-size: 24rpx;
+}
+
+.tab-switch {
+  width: 100%;
+  margin: 0 0 16rpx;
+  white-space: nowrap;
+}
+
+.tab-switch {
+  display: flex;
+  gap: 12rpx;
+}
+
+.record-tab {
+  flex: 1;
+  min-width: 132rpx;
+  padding: 18rpx 25rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 16rpx;
+  color: #777777;
+  background: #ffffff;
+  font-size: 28rpx;
+}
+
+.record-tab--active {
+  color: #ffffff;
+  border-color: #2f7257;
+  background: #2f7257;
+  font-weight: 500;
+}
+
+.more-record-row {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.more-record-button {
+  flex: 1;
+  min-height: 72rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 16rpx;
+  color: #777777;
+  background: #ffffff;
+  font-size: 28rpx;
+}
+
+.more-record-button--active {
+  color: #2f7257;
+  border-color: #2f7257;
+  background: #e6f1ed;
+}
+
+.segmented {
+  display: flex;
+  padding: 8rpx;
+  border-radius: 16rpx;
+  background: #eeeeee;
+}
+
+.segmented__item {
+  flex: 1;
+  min-height: 70rpx;
+  border-radius: 16rpx;
+  color: #777777;
+  font-size: 28rpx;
+}
+
+.segmented__item--active {
+  color: #2f7257;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.food-item {
+  min-height: 102rpx;
+  padding: 20rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 16rpx;
+  background: #ffffff;
+  text-align: center;
+}
+
+.food-item--active {
+  border-color: #2f7257;
+  background: #e6f1ed;
+}
+
+.food-item__name {
+  margin-bottom: 4rpx;
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.food-item .tiny {
+  font-size: 24rpx;
+  line-height: 1.35;
+}
+
+.food-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  width: 100%;
+}
+
+.category-button {
+  width: 100%;
+  text-align: center;
+}
+
+.selected-food {
+  width: 100%;
+  margin: 24rpx 0 0;
+  padding: 24rpx 0 0;
+  border: 0;
+  border-top: 1rpx solid #eeeeee;
+  border-radius: 0;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.compact-form-item {
+  margin: 0;
+}
+
+.food-input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  width: 100%;
+  margin: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.gram-input {
+  width: 100%;
+  min-width: 0 !important;
+  height: 96rpx;
+  padding: 0 24rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 12rpx;
+  color: #333333;
+  background: #ffffff;
+  font-size: 32rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.unit-switch {
+  display: flex;
+  gap: 16rpx;
+  width: 100%;
+}
+
+.unit-switch .unit-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  border: 0;
+  border-radius: 12rpx;
+  color: #333333;
+  background: #f5f5f5;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.unit-btn--active {
+  color: #ffffff;
+  background: #206c54;
+}
+
+.preview-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #eeeeee;
+}
+
+.preview-line__value {
+  color: #2f7257;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+}
+
+.record-list {
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  min-height: 88rpx;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.record-row:last-child {
+  border-bottom: 0;
+}
+
+.record-row__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 64rpx;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 16rpx;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.record-row__icon--blue {
+  background: #4c7fa3;
+}
+
+.record-row__icon--gold {
+  background: #d99a3d;
+}
+
+.record-row__icon--rose {
+  background: #d26e5b;
+}
+
+.record-row__value {
+  color: #333333;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.delete-link {
+  margin-left: 12rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.exercise-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120rpx;
+  padding: 20rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 16rpx;
+  color: #333333;
+  background: #ffffff;
+  font-size: 24rpx;
+}
+
+.exercise-item--active {
+  color: #2f7257;
+  border-color: #2f7257;
+  background: #e6f1ed;
+  font-weight: 500;
+}
+
+.exercise-item--active .exercise-item__icon {
+  background: #2f7257;
+}
+
+.exercise-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46rpx;
+  height: 46rpx;
+  margin-bottom: 6rpx;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 24rpx;
+}
+
+.top-gap {
+  margin-top: 22rpx;
+}
+
+.chart-card {
+  margin-top: 18rpx;
+}
+
+.weight-chart {
+  width: 100%;
+  height: 310rpx;
+  margin-top: 12rpx;
+}
+
+.chart-note {
+  text-align: right;
+}
+
+.prediction-card {
+  margin-top: 18rpx;
+}
+
+.prediction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14rpx;
+  margin: 22rpx 0 14rpx;
+}
+
+.prediction-item {
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.prediction-item__value {
+  margin-top: 4rpx;
+  color: #2f7257;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.prediction-item__value--blue {
+  color: #2f7257;
+}
+
+.records-page .card {
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.records-page .card > view,
+.records-page .card > button,
+.records-page .card > input,
+.records-page .card > textarea,
+.records-page .card > picker {
+  padding-right: 0;
+  padding-left: 0;
+}
+.records-page {
+  width: 100%;
+  overflow-x: hidden;
+}

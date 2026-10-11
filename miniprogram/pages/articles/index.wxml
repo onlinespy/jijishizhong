@@ -1,0 +1,33 @@
+<view class="page page--tab articles-page">
+  <view class="category-grid">
+    <button
+      wx:for="{{categories}}"
+      wx:key="id"
+      class="chip category-button {{activeCategory === item.id ? 'chip--active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="selectCategory"
+    >
+      {{item.name}}
+    </button>
+  </view>
+
+  <view class="article-list">
+    <button
+      wx:for="{{articles}}"
+      wx:key="id"
+      class="article-card article-card--{{item.theme}}"
+      data-id="{{item.id}}"
+      bindtap="openArticle"
+    >
+      <view class="article-content">
+        <view class="article-title">{{item.title}}</view>
+        <view class="article-meta">{{item.categoryName}} · {{item.readTime}}</view>
+      </view>
+      <view class="article-arrow">›</view>
+    </button>
+  </view>
+
+  <view class="card empty" wx:if="{{!articles.length}}">暂无科普文章</view>
+
+  <view class="disclaimer">本专区内容仅用于日常健康科普参考，不构成医疗指导；体态存在不适请前往医院就诊。</view>
+</view>

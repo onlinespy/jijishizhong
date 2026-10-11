@@ -1,0 +1,34 @@
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.bmi-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  background: #e6f1ed;
+}
+
+.bmi-preview__value {
+  color: #2f7257;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.setting-card {
+  margin-top: 32rpx;
+}
+
+.setting-title {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.save-button {
+  margin-top: 32rpx;
+}

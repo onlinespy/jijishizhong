@@ -1,0 +1,255 @@
+.dashboard {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.date-line {
+  margin-bottom: 20rpx;
+  color: #777777;
+  font-size: 24rpx;
+}
+
+.module-title {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.water-card {
+  padding: 32rpx;
+  border-color: #e8f2f8;
+  background: #ffffff;
+}
+
+.water-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.water-ring-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 8rpx 0 20rpx;
+}
+
+.water-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 190rpx;
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 50%;
+}
+
+.water-ring__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 146rpx;
+  height: 146rpx;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.water-ring__value {
+  color: #4c7fa3;
+  font-size: 40rpx;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.water-progress {
+  color: #4c7fa3;
+  font-size: 36rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.water-progress-note {
+  text-align: center;
+}
+
+.water-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16rpx;
+  width: 100%;
+  margin-top: 24rpx;
+}
+
+.water-button {
+  width: 100%;
+  min-width: 0;
+  padding: 14rpx 16rpx;
+  border-color: #4c7fa3;
+  color: #4c7fa3;
+  white-space: nowrap;
+}
+
+.card-divider {
+  height: 1rpx;
+  margin: 32rpx 0;
+  background: #eeeeee;
+}
+
+.water-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  width: 100%;
+}
+
+.water-reminder {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  min-width: 0;
+}
+
+.history-button {
+  flex: 0 0 auto;
+  padding: 12rpx 0;
+  color: #4c7fa3;
+  font-size: 24rpx;
+  white-space: nowrap;
+}
+
+.calorie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-top: 32rpx;
+}
+
+.calorie-card,
+.difference-card {
+  min-width: 0;
+}
+
+.calorie-card {
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+}
+
+.calorie-grid .card + .card {
+  margin-top: 0;
+}
+
+.calorie-value {
+  margin-top: 16rpx;
+  color: #2f7257;
+  font-size: 52rpx;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.calorie-card--intake {
+  border-top: 6rpx solid #2f7257;
+}
+
+.calorie-card--exercise {
+  border-top: 6rpx solid #4c7fa3;
+  background: #e8f2f8;
+}
+
+.calorie-card--exercise .calorie-value {
+  color: #4c7fa3;
+}
+
+.difference-card {
+  margin-top: 32rpx;
+  text-align: center;
+  border-top: 6rpx solid #d99a3d;
+  background: #fbf4e7;
+}
+
+.difference-value {
+  margin: 16rpx 0 4rpx;
+  color: #d99a3d;
+  font-size: 56rpx;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.fasting-card {
+  margin-top: 0;
+  border-left: 8rpx solid #2f7257;
+}
+
+.fasting-status {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  background: #e6f1ed;
+}
+
+.water-section-head {
+  margin-top: 40rpx;
+}
+
+.water-section-head .section-title {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.fasting-status__dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #2f7257;
+}
+
+.fasting-status__dot--eat {
+  background: #999999;
+}
+
+.fasting-time {
+  color: #2f7257;
+  font-family: monospace;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.timeline {
+  position: relative;
+  height: 16rpx;
+  margin-top: 24rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+  background: #eeeeee;
+}
+
+.timeline__eat {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 4rpx;
+  background: #2f7257;
+}
+
+.compact-empty {
+  padding: 32rpx 0 16rpx;
+}
+
+.fast-actions {
+  margin-top: 24rpx;
+}
+
+.stop-plan-button {
+  width: 100%;
+  margin-top: 16rpx;
+  padding: 16rpx 0;
+  color: #999999;
+  font-size: 24rpx;
+}

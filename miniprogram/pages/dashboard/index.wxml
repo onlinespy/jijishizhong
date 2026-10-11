@@ -1,0 +1,107 @@
+<view class="page page--tab dashboard">
+  <view class="date-line">{{dateLabel}}</view>
+
+  <view class="card fasting-card">
+    <view class="row-between">
+      <view>
+        <view class="module-title">轻断食计划</view>
+        <view class="tiny muted" wx:if="{{template.name}}">{{template.name}} · {{plan.eatStart}} - {{plan.eatEnd}}</view>
+      </view>
+      <view class="tag {{plan.enabled ? 'tag--active' : (planStopped ? 'tag--stopped' : '')}}">{{planStatusText}}</view>
+    </view>
+
+    <block wx:if="{{plan.enabled && template.mode === 'daily'}}">
+      <view class="fasting-status">
+        <view class="fasting-status__dot {{fastingStatus.inEatingWindow ? 'fasting-status__dot--eat' : ''}}"></view>
+        <view class="grow">
+          <view class="strong">{{fastingStatus.label}}</view>
+          <view class="tiny muted">{{fastingStatus.hint}}</view>
+        </view>
+        <view class="fasting-time">{{countdown}}</view>
+      </view>
+      <view class="timeline">
+        <view class="timeline__eat" style="left: {{timeline.eatLeft}}%; width: {{timeline.eatWidth}}%;"></view>
+      </view>
+    </block>
+
+    <view class="empty compact-empty" wx:else>
+      <view wx:if="{{planStopped}}">计划已停止，历史记录仍然保留。</view>
+      <view wx:else>设置模板后可查看断食倒计时与打卡。</view>
+    </view>
+
+    <view class="button-row fast-actions">
+      <button class="secondary-button" bindtap="openFasting">{{plan.enabled ? '调整计划' : (planStopped ? '重新启用' : '设置计划')}}</button>
+      <button class="primary-button" disabled="{{!plan.enabled || checkedIn}}" bindtap="handleFastingCheckin">{{checkedIn ? '今日已打卡' : '记录今日完成'}}</button>
+    </view>
+    <button class="stop-plan-button" wx:if="{{plan.enabled}}" bindtap="stopFasting">停止当前计划</button>
+  </view>
+
+  <view class="section-head water-section-head">
+    <view class="section-title">喝水记录</view>
+    <view class="water-head-actions">
+      <button class="text-button" bindtap="editWaterTarget">目标 {{waterTarget}}ml</button>
+      <button class="text-button" bindtap="goWaterHistory">历史记录</button>
+    </view>
+  </view>
+  <view class="card water-card">
+    <view class="water-ring-wrap">
+      <view class="water-ring" style="{{waterRingStyle}}">
+        <view class="water-ring__inner">
+          <view class="water-ring__value">{{waterTotal}}</view>
+          <view class="tiny muted">ml</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="water-progress">{{waterProgress}}%</view>
+    <view class="small muted water-progress-note">按每日目标记录</view>
+
+    <view class="water-buttons">
+      <button
+        wx:for="{{waterAmounts}}"
+        wx:key="*this"
+        class="chip water-button"
+        data-amount="{{item}}"
+        bindtap="addWater"
+      >
+        +{{item}}ml
+      </button>
+    </view>
+
+    <view class="card-divider"></view>
+
+    <view class="water-tools">
+      <view class="water-reminder">
+        <view>
+          <view class="module-title">喝水提醒</view>
+          <view class="tiny muted">需微信订阅消息授权</view>
+        </view>
+        <switch color="#2F7257" checked="{{waterReminder}}" bindchange="toggleWaterReminder" />
+      </view>
+      <button class="history-button" bindtap="undoLastWater">撤销上一次</button>
+    </view>
+  </view>
+
+  <view class="calorie-grid">
+    <view class="card calorie-card calorie-card--intake">
+      <view class="module-title">摄入热量</view>
+      <view class="calorie-value">{{dietCalories}}</view>
+      <view class="tiny muted">kcal</view>
+    </view>
+    <view class="card calorie-card calorie-card--exercise">
+      <view class="module-title">运动消耗</view>
+      <view class="calorie-value">{{exerciseCalories}}</view>
+      <view class="tiny muted">kcal</view>
+    </view>
+  </view>
+
+  <view class="card difference-card">
+    <view class="module-title">今日热量差额</view>
+    <view class="difference-value">{{calorieDifference}}</view>
+    <view class="tiny muted">摄入热量 - 运动消耗</view>
+  </view>
+
+  <view class="disclaimer">
+    本小程序仅为健康记录辅助工具，不提供医疗诊断或诊疗建议。所有热量和断食信息仅作日常记录参考。
+  </view>
+</view>

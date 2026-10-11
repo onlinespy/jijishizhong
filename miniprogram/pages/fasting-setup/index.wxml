@@ -1,0 +1,93 @@
+<view class="page setup-page">
+  <view class="setup-hero">
+    <view class="setup-hero__eyebrow">时间安排记录</view>
+    <view class="setup-hero__title">选择适合你的轻断食模板</view>
+    <view class="setup-hero__text">这里仅保存进食与断食时间安排，不提供食谱、热量处方或减重效果预测。</view>
+  </view>
+
+  <view class="stopped-banner" wx:if="{{planStopped}}">
+    当前计划已停止。历史打卡不会删除，保存下方设置后可重新启用。
+  </view>
+
+  <view class="section-head">
+    <view class="section-title">预设模板</view>
+  </view>
+  <view class="template-grid">
+    <button
+      wx:for="{{templates}}"
+      wx:key="id"
+      class="template-card {{selectedTemplateId === item.id ? 'template-card--active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="selectTemplate"
+    >
+      <view class="template-card__name">{{item.name}}</view>
+      <view class="template-card__desc">{{item.description}}</view>
+    </button>
+  </view>
+
+  <view class="card time-card" wx:if="{{selectedTemplate.mode === 'daily'}}">
+    <view class="row-between">
+      <view>
+        <view class="section-title">进食窗口</view>
+        <view class="small muted">可手动修改开始与结束时间</view>
+      </view>
+      <button class="text-button" bindtap="resetTimes">恢复模板</button>
+    </view>
+
+    <view class="two-column top-gap">
+      <view class="form-item">
+        <view class="form-label">开始时间</view>
+        <picker mode="time" value="{{eatStart}}" bindchange="onEatStartChange">
+          <view class="picker">{{eatStart}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <view class="form-label">结束时间</view>
+        <picker mode="time" value="{{eatEnd}}" bindchange="onEatEndChange">
+          <view class="picker">{{eatEnd}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="window-summary">
+      <view class="window-summary__item">
+        <view class="tiny muted">进食窗口</view>
+        <view class="window-summary__value">{{timeline.eatingHours}} 小时</view>
+      </view>
+      <view class="window-summary__item">
+        <view class="tiny muted">其余时间</view>
+        <view class="window-summary__value window-summary__value--green">{{timeline.fastingHours}} 小时</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card weekly-note" wx:else>
+    <view class="weekly-note__title">5+2 记录方式</view>
+    <view class="small muted">每周由用户自行选择 2 天进行计划内打卡，本工具不会安排具体代餐、食谱或热量目标。</view>
+  </view>
+
+  <view class="disclaimer">
+    轻断食仅作为生活方式参考；孕妇、哺乳期、低血糖、胃病、糖尿病、青少年不建议进行轻断食；如有身体不适请立刻停止并咨询医生。本小程序仅为打卡记录工具，不提供医疗建议。
+  </view>
+
+  <button class="primary-button save-button" bindtap="savePlan">{{planEnabled ? '更新计划' : '确认并启用计划'}}</button>
+  <button class="stop-plan-button" wx:if="{{planEnabled}}" bindtap="stopPlan">停止当前轻断食计划</button>
+  <view class="stop-plan-note" wx:if="{{planEnabled}}">
+    停止只会关闭倒计时和每日打卡入口，不会删除历史记录。
+  </view>
+</view>
+
+<view class="modal-mask" wx:if="{{riskModalVisible}}">
+  <view class="risk-modal">
+    <view class="risk-modal__symbol">!</view>
+    <view class="risk-modal__title">健康风险提示</view>
+    <view class="risk-modal__content">
+      轻断食仅作为生活方式参考；孕妇、哺乳期、低血糖、胃病、糖尿病、青少年不建议进行轻断食；如有身体不适请立刻停止并咨询医生。本小程序仅为打卡记录工具，不提供医疗建议。
+    </view>
+    <button class="risk-check" bindtap="toggleRiskAgreement">
+      <view class="risk-check__box {{riskAgreed ? 'risk-check__box--active' : ''}}">{{riskAgreed ? '✓' : ''}}</view>
+      <view class="risk-check__text">我已阅读并理解以上提示</view>
+    </button>
+    <button class="primary-button" disabled="{{!riskAgreed}}" bindtap="agreeRisk">确认并继续</button>
+  </view>
+</view>

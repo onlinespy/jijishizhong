@@ -1,0 +1,166 @@
+.profile-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+  width: 100%;
+  padding: 24rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 24rpx;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.profile-name {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.profile-meta {
+  margin-top: 7rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.profile-badge {
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  color: #2f7257;
+  background: #e6f1ed;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16rpx;
+  padding: 32rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.profile-stat {
+  text-align: center;
+}
+
+.profile-stat__value {
+  color: #2f7257;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.profile-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 17rpx;
+  margin: 24rpx 0 0;
+}
+
+.profile-notice__symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42rpx;
+  width: 42rpx;
+  height: 42rpx;
+  margin-top: 2rpx;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.menu-card {
+  overflow: hidden;
+  border: 1rpx solid #eeeeee;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  width: 100%;
+  min-height: 112rpx;
+  padding: 16rpx 32rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  text-align: left;
+}
+
+.menu-row:last-child {
+  border-bottom: 0;
+}
+
+.menu-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 66rpx;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 16rpx;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.menu-symbol--blue {
+  background: #4c7fa3;
+}
+
+.menu-symbol--gold {
+  background: #d99a3d;
+}
+
+.menu-symbol--purple {
+  background: #d26e5b;
+}
+
+.menu-symbol--gray {
+  background: #999999;
+}
+
+.menu-title {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.menu-arrow {
+  color: #999999;
+  font-size: 40rpx;
+}
+
+.profile-page > .section-head {
+  padding: 0;
+}
+
+.profile-page .disclaimer {
+  margin-right: 0;
+  margin-left: 0;
+}

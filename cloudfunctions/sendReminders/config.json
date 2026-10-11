@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "openapi": [
+      "subscribeMessage.send"
+    ]
+  },
+  "triggers": [
+    {
+      "name": "water-reminder",
+      "type": "timer",
+      "config": "0 0 19 * * * *"
+    },
+    {
+      "name": "period-reminder",
+      "type": "timer",
+      "config": "0 0 9 * * * *"
+    }
+  ]
+}

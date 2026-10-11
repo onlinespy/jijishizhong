@@ -1,0 +1,75 @@
+.setting-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  width: 100%;
+  min-height: 104rpx;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #eeeeee;
+  text-align: left;
+}
+
+.setting-row:last-child {
+  border-bottom: 0;
+}
+
+.setting-row--button {
+  border-radius: 0;
+}
+
+.setting-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 66rpx;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 16rpx;
+  color: #ffffff;
+  background: #2f7257;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.setting-symbol--blue {
+  background: #4c7fa3;
+}
+
+.setting-symbol--rose {
+  background: #d26e5b;
+}
+
+.setting-symbol--gray {
+  background: #999999;
+}
+
+.setting-title {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.menu-arrow {
+  color: #999999;
+  font-size: 40rpx;
+}
+
+.section-gap {
+  margin-top: 40rpx;
+}
+
+.data-copy {
+  margin-bottom: 22rpx;
+}
+
+.version {
+  margin-top: 44rpx;
+  color: #999999;
+  text-align: center;
+  font-size: 24rpx;
+}

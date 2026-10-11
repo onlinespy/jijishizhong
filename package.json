@@ -1,0 +1,13 @@
+{
+  "name": "jijishizhong",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "记记食钟健康管理软件 V1.0 微信小程序",
+  "scripts": {
+    "test": "npm run validate && npm run test:core && npm run test:smoke",
+    "validate": "node scripts/validate.js",
+    "test:core": "node scripts/test-core.js",
+    "test:smoke": "node scripts/smoke-miniprogram.js"
+  }
+}

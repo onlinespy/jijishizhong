@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/dashboard/index",
+    "pages/records/index",
+    "pages/articles/index",
+    "pages/profile/index",
+    "pages/fasting-setup/index",
+    "pages/calendar/index",
+    "pages/water-history/index",
+    "pages/article-detail/index",
+    "pages/profile-edit/index",
+    "pages/badges/index",
+    "pages/settings/index",
+    "pages/agreement/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "记记食钟",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A8178",
+    "selectedColor": "#2F6B58",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/dashboard/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/records/index",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/articles/index",
+        "text": "科普"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,23 @@
+<view class="page badges-page">
+  <view class="badge-hero">
+    <view class="badge-hero__eyebrow">记录成就</view>
+    <view class="badge-hero__title">{{unlockedCount}} 枚勋章已解锁</view>
+    <view class="badge-hero__text">勋章仅根据打卡记录自动展示，无积分、无兑换，也不代表健康效果。</view>
+  </view>
+
+  <view class="badge-grid">
+    <view class="badge-card {{item.unlocked ? '' : 'badge-card--locked'}}" wx:for="{{badges}}" wx:key="id">
+      <view class="badge-medal badge-medal--{{item.theme}} {{item.unlocked ? '' : 'badge-medal--locked'}}">
+        {{item.symbol}}
+      </view>
+      <view class="badge-name">{{item.name}}</view>
+      <view class="badge-desc">{{item.description}}</view>
+      <view class="badge-progress">
+        <view class="badge-progress__bar" style="width: {{item.progress}}%;"></view>
+      </view>
+      <view class="tiny muted">{{item.unlocked ? '已解锁' : item.progressText}}</view>
+    </view>
+  </view>
+
+  <view class="disclaimer">连续打卡仅用于鼓励记录习惯，中断记录不会产生任何健康评价。请根据自身情况合理安排使用。</view>
+</view>

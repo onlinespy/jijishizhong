@@ -1,0 +1,14 @@
+<view class="page agreement-page" wx:if="{{document}}">
+  <view class="agreement-title">{{document.title}}</view>
+  <view class="agreement-date">{{document.updatedAt}}</view>
+  <view class="agreement-intro">{{document.intro}}</view>
+
+  <view class="agreement-section" wx:for="{{document.sections}}" wx:key="heading">
+    <view class="agreement-heading">{{item.heading}}</view>
+    <view class="agreement-paragraph" wx:for="{{item.paragraphs}}" wx:for-item="paragraph" wx:key="*this">
+      {{paragraph}}
+    </view>
+  </view>
+
+  <view class="agreement-footer">记记食钟健康管理软件 V1.0</view>
+</view>

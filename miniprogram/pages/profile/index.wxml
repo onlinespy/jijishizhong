@@ -1,0 +1,64 @@
+<view class="page page--tab profile-page">
+  <view class="profile-hero">
+    <view class="profile-avatar">{{profile.nickname ? profile.nickname[0] : '健'}}</view>
+    <view class="grow">
+      <view class="profile-name">{{profile.nickname || '健康记录用户'}}</view>
+      <view class="profile-meta">
+        {{profile.gender || '未设置'}} · {{profile.birthday || '生日未填写'}}
+      </view>
+    </view>
+    <view class="profile-badge">{{unlockedCount}}/{{badgeTotal}}</view>
+  </view>
+
+  <view class="profile-stats">
+    <view class="profile-stat">
+      <view class="profile-stat__value">{{profile.height || '--'}}</view>
+      <view class="tiny muted">身高 cm</view>
+    </view>
+    <view class="profile-stat">
+      <view class="profile-stat__value">{{latestWeight}}</view>
+      <view class="tiny muted">体重 kg</view>
+    </view>
+    <view class="profile-stat">
+      <view class="profile-stat__value">{{bmi || '--'}}</view>
+      <view class="tiny muted">BMI 数值</view>
+    </view>
+    <view class="profile-stat">
+      <view class="profile-stat__value">{{recordDayCount}}</view>
+      <view class="tiny muted">记录天数</view>
+    </view>
+  </view>
+
+  <view class="card profile-notice">
+    <view class="profile-notice__symbol">i</view>
+    <view class="grow">
+      <view class="strong">档案仅用于本地计算与记录</view>
+      <view class="small muted">身高用于 BMI，体重用于运动消耗估算。页面不输出体型评价。</view>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <view class="section-title">常用功能</view>
+  </view>
+
+  <view class="menu-card">
+    <button
+      wx:for="{{menus}}"
+      wx:key="id"
+      class="menu-row"
+      data-id="{{item.id}}"
+      bindtap="openMenu"
+    >
+      <view class="menu-symbol menu-symbol--{{item.theme}}">{{item.symbol}}</view>
+      <view class="grow">
+        <view class="menu-title">{{item.title}}</view>
+        <view class="tiny muted">{{item.note}}</view>
+      </view>
+      <view class="menu-arrow">›</view>
+    </button>
+  </view>
+
+  <view class="disclaimer">
+    本小程序属于健康记录辅助工具，不提供任何医疗诊断、诊疗建议。轻断食、居家体态练习不一定适合所有人；如身体存在疾病，请遵从专业医师指导。
+  </view>
+</view>

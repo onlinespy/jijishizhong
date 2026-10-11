@@ -1,0 +1,52 @@
+.agreement-page {
+  padding-top: 32rpx;
+}
+
+.agreement-title {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.agreement-date {
+  margin-top: 10rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.agreement-intro {
+  margin-top: 28rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  color: #333333;
+  background: #e6f1ed;
+  font-size: 28rpx;
+  line-height: 1.75;
+}
+
+.agreement-section {
+  margin-top: 36rpx;
+}
+
+.agreement-heading {
+  margin-bottom: 15rpx;
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.agreement-paragraph {
+  margin-bottom: 14rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.85;
+}
+
+.agreement-footer {
+  margin-top: 50rpx;
+  padding-top: 25rpx;
+  border-top: 1rpx solid #eeeeee;
+  color: #999999;
+  text-align: center;
+  font-size: 24rpx;
+}
